@@ -14,6 +14,7 @@ export interface RoadmapItem {
   period: 'now' | 'next' | 'later';
   title: string;
   description: string;
+  icon?: React.ComponentType<{ className?: string }>;
 }
 
 export interface Feature {

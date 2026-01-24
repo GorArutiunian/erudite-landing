@@ -64,7 +64,7 @@ export const Pricing = () => {
     <section id="pricing" className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,13 +81,13 @@ export const Pricing = () => {
           <p className="text-xl text-primary-700 dark:text-gray-200 max-w-2xl mx-auto">
             Choose the perfect plan for your family or institution
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, idx) => {
             const Icon = plan.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export const Pricing = () => {
                 
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, fIdx) => (
-                    <li
+                    <motion.li
                       key={fIdx}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -141,7 +141,7 @@ export const Pricing = () => {
                         <Check className="w-4 h-4 text-primary-600 dark:text-white" />
                       </div>
                       <span className="text-primary-500 dark:text-gray-200 font-medium">{feature}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
                 
@@ -155,13 +155,13 @@ export const Pricing = () => {
                   <span>{plan.cta}</span>
                   <ArrowRight className={`w-5 h-5 ${plan.popular ? 'text-white' : 'text-primary-700'}`} />
                 </button>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Additional Info */}
-        <div
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -184,7 +184,7 @@ export const Pricing = () => {
               <span>24/7 support</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

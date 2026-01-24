@@ -51,7 +51,7 @@ export const Roadmap = () => {
     <section id="roadmap" className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,7 +68,7 @@ export const Roadmap = () => {
           <p className="text-xl text-primary-700 max-w-2xl mx-auto">
             Our journey to transform kids' learning experience
           </p>
-        </div>
+        </motion.div>
 
         {/* Roadmap Items Grid */}
         <div className="max-w-6xl mx-auto">
@@ -77,7 +77,7 @@ export const Roadmap = () => {
             const PeriodIcon = period.icon;
             
             return (
-              <div
+              <motion.div
                 key={period.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export const Roadmap = () => {
                   {items.map((item, itemIdx) => {
                     const ItemIcon = item.icon || BookOpen;
                     return (
-                      <div
+                      <motion.div
                         key={item.id}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -140,11 +140,11 @@ export const Roadmap = () => {
                             </div>
                           )}
                         </div>
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

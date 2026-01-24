@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, BookOpen, BarChart3, Smile, Eye, Video, FileText, HelpCircle, Layers, Target, Users } from 'lucide-react';
+import { CheckCircle2, XCircle, BookOpen, BarChart3, Smile, Eye, Video, FileText, HelpCircle, Layers, Target } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
 export const Differentiation = () => {

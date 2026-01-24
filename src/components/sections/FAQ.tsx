@@ -41,7 +41,7 @@ export const FAQ = () => {
   return (
     <section id="faq" className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,11 +51,11 @@ export const FAQ = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-primary-800 mb-4">
             {t('faq.title')}
           </h2>
-        </div>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, idx) => (
-            <div
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export const FAQ = () => {
               </button>
               <AnimatePresence>
                 {openIndex === idx && (
-                  <div
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -88,10 +88,10 @@ export const FAQ = () => {
                     <div className="px-6 py-4 text-primary-700 dark:text-gray-200 border-t border-primary-200 dark:border-primary-700">
                       {faq.a}
                     </div>
-                  </div>
+                  </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

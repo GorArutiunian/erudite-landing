@@ -7,7 +7,7 @@ export const Multilingual = () => {
 
   const languages = [
     { code: 'en' as const, name: 'English', flag: '🇬🇧' },
-    { code: 'am' as const, name: 'Հայերեն', flag: '🇦🇲' },
+    { code: 'am' as const, name: 'Հdelays', flag: '🇦🇲' },
     { code: 'ru' as const, name: 'Русский', flag: '🇷🇺' },
   ];
 
@@ -15,7 +15,7 @@ export const Multilingual = () => {
     <section className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,10 +34,10 @@ export const Multilingual = () => {
             <p className="text-lg text-primary-700 dark:text-gray-200">
               {t('multilingual.desc')}
             </p>
-          </div>
+          </motion.div>
 
           {/* Language Switcher Demo */}
-          <div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,7 +72,7 @@ export const Multilingual = () => {
                 Notice how the interface adapts? This is how Erudite works for kids worldwide.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

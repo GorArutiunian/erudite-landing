@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Sparkles, BookOpen, Trophy, Globe, Shield, Star, Zap, Target, Users, Rocket, CheckCircle2, Coins, Play } from 'lucide-react';
+import { Trophy, Globe, Shield, Star, Zap, Target, Users, Coins, Play } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Hero = () => {
