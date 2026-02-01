@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import type { FormData } from '../types';
+import { sendDeckRequest, sendDemoRequest } from '../api/formspree';
 
 interface InvestorDeckFormProps {
   onSubmit: (data: FormData) => void;
@@ -19,6 +20,8 @@ export const InvestorDeckForm = ({ onSubmit }: InvestorDeckFormProps) => {
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const newErrors: Partial<FormData> = {};
@@ -32,15 +35,27 @@ export const InvestorDeckForm = ({ onSubmit }: InvestorDeckFormProps) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (validate()) {
+    setSubmitError(null);
+    if (!validate()) return;
+    setSubmitting(true);
+    const result = await sendDeckRequest({
+      name: formData.name,
+      email: formData.email,
+      role: formData.role,
+      message: formData.message,
+    });
+    setSubmitting(false);
+    if (result.ok) {
       onSubmit(formData);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', role: 'investor', message: '' });
       }, 3000);
+    } else {
+      setSubmitError(result.error ?? 'Something went wrong. Please try again.');
     }
   };
 
@@ -117,11 +132,15 @@ export const InvestorDeckForm = ({ onSubmit }: InvestorDeckFormProps) => {
         />
       </div>
 
+      {submitError && (
+        <p className="text-red-600 dark:text-red-400 text-sm">{submitError}</p>
+      )}
       <button
         type="submit"
-        className="w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors"
+        disabled={submitting}
+        className="w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 disabled:opacity-60 text-white rounded-lg font-semibold transition-colors"
       >
-        {t('modal.deck.submit')}
+        {submitting ? 'Sending…' : t('modal.deck.submit')}
       </button>
     </form>
   );
@@ -142,6 +161,8 @@ export const DemoForm = ({ onSubmit }: DemoFormProps) => {
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const newErrors: Partial<FormData> = {};
@@ -155,15 +176,28 @@ export const DemoForm = ({ onSubmit }: DemoFormProps) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (validate()) {
+    setSubmitError(null);
+    if (!validate()) return;
+    setSubmitting(true);
+    const result = await sendDemoRequest({
+      name: formData.name,
+      email: formData.email,
+      organization: formData.organization,
+      date: formData.date,
+      message: formData.message,
+    });
+    setSubmitting(false);
+    if (result.ok) {
       onSubmit(formData);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', organization: '', date: '', message: '' });
       }, 3000);
+    } else {
+      setSubmitError(result.error ?? 'Something went wrong. Please try again.');
     }
   };
 
@@ -248,11 +282,15 @@ export const DemoForm = ({ onSubmit }: DemoFormProps) => {
         />
       </div>
 
+      {submitError && (
+        <p className="text-red-600 dark:text-red-400 text-sm">{submitError}</p>
+      )}
       <button
         type="submit"
-        className="w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors"
+        disabled={submitting}
+        className="w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 disabled:opacity-60 text-white rounded-lg font-semibold transition-colors"
       >
-        {t('modal.demo.submit')}
+        {submitting ? 'Sending…' : t('modal.demo.submit')}
       </button>
     </form>
   );

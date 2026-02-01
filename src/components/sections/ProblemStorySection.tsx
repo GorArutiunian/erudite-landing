@@ -17,7 +17,7 @@ import {
 // Import verified metrics
 import {
   sources,
-  screenTimeMetrics,
+  pitchMetrics,
   screenTimeComposition,
   parentConfidence
 } from '../../content/metrics';
@@ -107,7 +107,7 @@ const ScreenTimeBar = () => (
       </motion.div>
     </div>
     <p className="text-xs text-primary-500 dark:text-primary-400 mt-2 text-center">
-      Screen time composition for ages 0–8 (2024)
+      Screen time composition for ages 4–9 (2024)
     </p>
   </div>
 );
@@ -180,7 +180,7 @@ export const ProblemStorySection = () => {
   return (
     <section 
       id="problem-story" 
-      className="py-20 lg:py-32 bg-gradient-to-b from-white via-primary-50/30 to-white dark:from-primary-950 dark:via-primary-900/30 dark:to-primary-950 relative overflow-hidden"
+      className="py-12 lg:py-20 bg-gradient-to-b from-white via-primary-50/30 to-white dark:from-primary-950 dark:via-primary-900/30 dark:to-primary-950 relative overflow-hidden"
       aria-labelledby="problem-story-heading"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -190,7 +190,7 @@ export const ProblemStorySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center space-x-2 bg-white dark:bg-primary-800 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium mb-4 border border-primary-200 dark:border-primary-700">
             <AlertCircle className="w-4 h-4" />
@@ -208,7 +208,7 @@ export const ProblemStorySection = () => {
         </motion.div>
 
         {/* Story Blocks */}
-        <div className="space-y-16 lg:space-y-24">
+        <div className="space-y-12 lg:space-y-16">
           
           {/* BLOCK 1: Hook with Real Stats */}
           <motion.div
@@ -226,25 +226,25 @@ export const ProblemStorySection = () => {
                 But not all screen time supports learning.
               </p>
               
-              {/* Primary Stat */}
+              {/* Primary Stat (presentation-aligned: 3+ hours every day, ages 4–9) */}
               <div className="inline-flex flex-col bg-white dark:bg-primary-800 rounded-xl p-6 shadow-lg border border-primary-100 dark:border-primary-700">
                 <div className="flex items-baseline">
                   <span className="text-5xl lg:text-6xl font-bold text-primary-700 dark:text-white">
-                    {screenTimeMetrics.ages5to8Daily.value}
+                    {pitchMetrics.screenTime.value}
                   </span>
                   <span className="text-lg text-primary-600 dark:text-gray-300 ml-2">
-                    {screenTimeMetrics.ages5to8Daily.label}
+                    {pitchMetrics.screenTime.unit}
                   </span>
                   <Citation sourceId="1" />
                 </div>
                 <span className="text-sm text-primary-500 dark:text-primary-400 mt-1">
-                  {screenTimeMetrics.ages5to8Daily.fullLabel}
+                  {pitchMetrics.screenTime.label}
                 </span>
               </div>
               
               {/* Supporting stat */}
               <p className="text-sm text-primary-600 dark:text-gray-400 mt-4">
-                Kids ≤8 average {screenTimeMetrics.ages0to8Daily.value}/day overall.<Citation sourceId="1" />
+                Average daily screen time for children aged 4–9.<Citation sourceId="1" />
               </p>
             </div>
             
@@ -297,7 +297,7 @@ export const ProblemStorySection = () => {
                   <BarChart3 className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                 </div>
                 <span className="text-lg text-primary-700 dark:text-gray-200">
-                  Ages 5–8 spend <strong>{screenTimeComposition.gamingTime5to8.value}</strong>/day on games alone<Citation sourceId="1" />
+                  Ages 4–9 spend <strong>{screenTimeComposition.gamingTime5to8.value}</strong>/day on games alone<Citation sourceId="1" />
                 </span>
               </motion.li>
               <motion.li
@@ -393,7 +393,7 @@ export const ProblemStorySection = () => {
               {/* Parent confidence stat */}
               <div className="bg-red-50 dark:bg-red-900/20 rounded-xl p-4 mb-6 border border-red-200 dark:border-red-800">
                 <p className="text-lg text-red-800 dark:text-red-300 font-medium">
-                  <strong>{parentConfidence.fairPoor5to8.value}</strong> of parents of 5–8-year-olds rate their media parenting as fair or poor.<Citation sourceId="1" />
+                  <strong>{parentConfidence.fairPoor5to8.value}</strong> of parents of 4–9-year-olds rate their media parenting as fair or poor.<Citation sourceId="1" />
                 </p>
               </div>
               

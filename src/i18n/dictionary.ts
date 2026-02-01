@@ -1,4 +1,4 @@
-export type Language = 'en' | 'am' | 'ru';
+export type Language = 'en';
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -16,7 +16,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.headline': 'Make Learning Joyful, Measurable, and Safe',
     'hero.subheadline': 'Interactive educational platform that kids love and parents trust. Structured lessons, gamified progress, and transparent insights—all in one multilingual app.',
-    'hero.trust.multilingual': 'Multilingual',
+    'hero.trust.multilingual': 'Structured Learning',
     'hero.trust.gamified': 'Gamified Learning',
     'hero.trust.parentInsights': 'Parent Insights',
     'hero.trust.safeDesign': 'Safe-by-Design',
@@ -45,8 +45,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'product.tab.rewards': 'Rewards',
     'product.tab.parents': 'Parents',
     'product.lessons.desc': 'Structured, age-appropriate lessons that adapt to each child\'s learning pace.',
-    'product.lessons.f1': 'Short, interactive sessions (5-15 min)',
-    'product.lessons.f2': 'Age-appropriate content (4-12 years)',
+    'product.lessons.f1': '3-5 minute interactive lessons',
+    'product.lessons.f2': 'Age-appropriate content (4-9 years)',
     'product.lessons.f3': 'Progressive skill building',
     'product.lessons.f4': 'Multilingual support',
     'product.games.desc': 'Engaging quizzes and games that reinforce learning through play.',
@@ -185,38 +185,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'modal.pressKit.screenshots': 'Screenshots',
     'modal.pressKit.factSheet': 'Fact Sheet',
   },
-  am: {
-    'nav.product': 'Ապրանք',
-    'nav.forParents': 'Ծնողների համար',
-    'nav.forSchools': 'Դպրոցների համար',
-    'nav.whyErudite': 'Ինչու Erudite',
-    'nav.pricing': 'Գներ',
-    'nav.roadmap': 'Ճանապարհային քարտեզ',
-    'nav.faq': 'ՀՏՀ',
-    'nav.requestDeck': 'Պահանջել Ներդրողների Ներկայացում',
-    'nav.bookDemo': 'Պատվիրել Դեմո',
-    'hero.headline': 'Դարձրեք ուսուցումը ուրախ, չափելի և անվտանգ',
-    'hero.subheadline': 'Ինտերակտիվ կրթական հարթակ, որը երեխաները սիրում են, իսկ ծնողները վստահում են:',
-    'hero.cta.deck': 'Պահանջել Ներկայացում',
-    'hero.cta.product': 'Դիտել Ապրանք',
-  },
-  ru: {
-    'nav.product': 'Продукт',
-    'nav.forParents': 'Для родителей',
-    'nav.forSchools': 'Для школ',
-    'nav.whyErudite': 'Почему Erudite',
-    'nav.pricing': 'Цены',
-    'nav.roadmap': 'Дорожная карта',
-    'nav.faq': 'ЧАВО',
-    'nav.requestDeck': 'Запросить презентацию',
-    'nav.bookDemo': 'Забронировать демо',
-    'hero.headline': 'Сделайте обучение радостным, измеримым и безопасным',
-    'hero.subheadline': 'Интерактивная образовательная платформа, которую любят дети и которой доверяют родители.',
-    'hero.cta.deck': 'Запросить презентацию',
-    'hero.cta.product': 'Посмотреть продукт',
-  },
 };
 
-export const getTranslation = (lang: Language, key: string): string => {
-  return translations[lang]?.[key] || translations.en[key] || key;
+export const getTranslation = (_lang: Language, key: string): string => {
+  return translations.en[key] ?? key;
 };

@@ -60,7 +60,7 @@ export const Hero = () => {
               transition={{ delay: 0.35, duration: 0.6 }}
               className="text-sm text-primary-500 dark:text-primary-400"
             >
-              Kids 5–8 average 3:28/day on screens.{' '}
+              Kids 4–9 average 3+ hours every day on screens.{' '}
               <a href="#sources" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">[1]</a>
             </motion.p>
 

@@ -5,7 +5,7 @@ export const FinalCTA = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 lg:py-32 bg-primary-800 dark:bg-primary-950">
+    <section className="py-12 lg:py-20 bg-primary-800 dark:bg-primary-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

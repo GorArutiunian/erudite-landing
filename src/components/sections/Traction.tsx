@@ -9,11 +9,11 @@ export const Traction = () => {
     {
       icon: Users,
       title: t('traction.pilot'),
-      description: 'Engaged with parents to understand pain points and validate product-market fit.',
+      description: 'Engaged with over 70 Armenian parents to understand pain points and validate product-market fit.',
       color: 'bg-primary-700',
       bg: 'bg-primary-50',
-      stat: '50+',
-      statLabel: 'Parent Interviews',
+      stat: '70+',
+      statLabel: 'Armenian parents',
     },
     {
       icon: TestTube,
@@ -42,7 +42,7 @@ export const Traction = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950 relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-gray-50 dark:bg-primary-950 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -50,7 +50,7 @@ export const Traction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center space-x-2 bg-white dark:bg-primary-800 text-primary-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium mb-4 border border-primary-200 dark:border-primary-700">
             <TrendingUp className="w-4 h-4 fill-green-600 text-green-600" />
@@ -150,7 +150,7 @@ export const Traction = () => {
             </div>
             <div>
               <p className="text-primary-800 dark:text-white font-medium">
-                AI learning exposure is already here: <strong>39%</strong> of parents say kids 5–8 used AI for school-related learning.{' '}
+                AI learning exposure is already here: <strong>39%</strong> of parents say kids 4–9 used AI for school-related learning.{' '}
                 <a href="#sources" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 text-sm">[1]</a>
               </p>
               <p className="text-sm text-primary-600 dark:text-primary-400 mt-1">
@@ -178,7 +178,13 @@ export const Traction = () => {
               {t('traction.note')}
             </p>
             <div className="flex justify-center">
-              <button className="flex items-center space-x-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold transition-colors">
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent('openModal', { detail: 'deck' }));
+                }}
+                className="flex items-center space-x-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold transition-colors"
+              >
                 <span>Request Full Deck</span>
                 <ArrowRight className="w-5 h-5" />
               </button>

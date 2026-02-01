@@ -10,14 +10,8 @@ import { ProblemStorySection } from './components/sections/ProblemStorySection';
 import { ProblemOpportunity } from './components/sections/ProblemOpportunity';
 import { ProductOverview } from './components/sections/ProductOverview';
 import { ParentDashboard } from './components/sections/ParentDashboard';
-import { LearningExperience } from './components/sections/LearningExperience';
-import { Multilingual } from './components/sections/Multilingual';
-import { Differentiation } from './components/sections/Differentiation';
 import { Traction } from './components/sections/Traction';
 import { Pricing } from './components/sections/Pricing';
-import { Roadmap } from './components/sections/Roadmap';
-import { Security } from './components/sections/Security';
-import { FAQ } from './components/sections/FAQ';
 import { FinalCTA } from './components/sections/FinalCTA';
 import { Footer } from './components/Footer';
 import { useLanguage } from './context/LanguageContext';
@@ -60,14 +54,8 @@ const AppContent = () => {
       <ProblemOpportunity />
       <ProductOverview />
       <ParentDashboard />
-      <LearningExperience />
-      <Multilingual />
-      <Differentiation />
       <Traction />
       <Pricing />
-      <Roadmap />
-      <Security />
-      <FAQ />
       <FinalCTA />
       <Footer />
 

@@ -51,17 +51,41 @@ export const sources: Source[] = [
 ];
 
 // ============================================
-// SCREEN TIME METRICS
+// PITCH / PRESENTATION-ALIGNED DISPLAY (Erudite Pitch.key)
+// ============================================
+
+export const pitchMetrics = {
+  screenTime: {
+    value: '3+',
+    unit: 'hours every day',
+    ageRange: '4–9',
+    label: 'Average daily screen time for children aged 4–9',
+  },
+  lessonLength: '3-5 minute interactive lessons',
+  ageRange: '4–9',
+  tractionParents: { value: '70+', label: 'Armenian parents' },
+};
+
+// ============================================
+// SCREEN TIME METRICS (cited sources)
 // ============================================
 
 export const screenTimeMetrics = {
-  // Primary stat for ages 5-8
+  // Primary stat for ages 5-8 (research); pitch uses 3+ hours / 4-9
   ages5to8Daily: {
     value: '3:28',
     label: 'hours/day',
     fullLabel: 'Avg screen time (ages 5–8)',
     sourceId: '1',
     context: 'About three and a half hours per day'
+  },
+  // Pitch-aligned for hero/headlines
+  ages4to9Daily: {
+    value: '3+',
+    label: 'hours every day',
+    fullLabel: 'Average daily screen time (children aged 4–9)',
+    sourceId: '1',
+    context: 'Screen time is flooded with 3+ hours every day'
   },
   // Overall for kids ≤8
   ages0to8Daily: {

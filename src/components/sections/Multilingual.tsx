@@ -7,8 +7,6 @@ export const Multilingual = () => {
 
   const languages = [
     { code: 'en' as const, name: 'English', flag: '🇬🇧' },
-    { code: 'am' as const, name: 'Հdelays', flag: '🇦🇲' },
-    { code: 'ru' as const, name: 'Русский', flag: '🇷🇺' },
   ];
 
   return (

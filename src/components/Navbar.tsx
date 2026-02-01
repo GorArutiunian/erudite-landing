@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,50 +73,15 @@ export const Navbar = () => {
               {t('nav.forSchools')}
             </button>
             <button
-              onClick={() => scrollTo('differentiation')}
-              className="text-white hover:text-primary-200 transition-colors"
-            >
-              {t('nav.whyErudite')}
-            </button>
-            <button
               onClick={() => scrollTo('pricing')}
               className="text-white hover:text-primary-200 transition-colors"
             >
               {t('nav.pricing')}
             </button>
-            <button
-              onClick={() => scrollTo('roadmap')}
-              className="text-white hover:text-primary-200 transition-colors"
-            >
-              {t('nav.roadmap')}
-            </button>
-            <button
-              onClick={() => scrollTo('faq')}
-              className="text-white hover:text-primary-200 transition-colors"
-            >
-              {t('nav.faq')}
-            </button>
           </div>
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            {/* Language Switcher */}
-            <div className="hidden sm:flex items-center space-x-1 bg-primary-700 border border-primary-600 rounded-lg p-1">
-              {(['en', 'am', 'ru'] as const).map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                    language === lang
-                      ? 'bg-white text-primary-800 shadow-sm'
-                      : 'text-white hover:text-primary-200'
-                  }`}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
-
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -193,31 +158,7 @@ export const Navbar = () => {
               onClick={() => scrollTo('pricing')}
               className="block w-full text-left py-2 text-white hover:text-primary-200"
             >
-              {t('nav.forSchools')}
-            </button>
-            <button
-              onClick={() => scrollTo('differentiation')}
-              className="block w-full text-left py-2 text-white hover:text-primary-200"
-            >
-              {t('nav.whyErudite')}
-            </button>
-            <button
-              onClick={() => scrollTo('pricing')}
-              className="block w-full text-left py-2 text-white hover:text-primary-200"
-            >
               {t('nav.pricing')}
-            </button>
-            <button
-              onClick={() => scrollTo('roadmap')}
-              className="block w-full text-left py-2 text-white hover:text-primary-200"
-            >
-              {t('nav.roadmap')}
-            </button>
-            <button
-              onClick={() => scrollTo('faq')}
-              className="block w-full text-left py-2 text-white hover:text-primary-200"
-            >
-              {t('nav.faq')}
             </button>
             <div className="pt-4 border-t border-primary-700 space-y-3">
               <button
