@@ -78,6 +78,12 @@ export const Navbar = () => {
             >
               {t('nav.pricing')}
             </button>
+            <button
+              onClick={() => scrollTo('faq')}
+              className="text-white hover:text-primary-200 transition-colors"
+            >
+              {t('nav.faq')}
+            </button>
           </div>
 
           {/* Actions */}
@@ -159,6 +165,12 @@ export const Navbar = () => {
               className="block w-full text-left py-2 text-white hover:text-primary-200"
             >
               {t('nav.pricing')}
+            </button>
+            <button
+              onClick={() => scrollTo('faq')}
+              className="block w-full text-left py-2 text-white hover:text-primary-200"
+            >
+              {t('nav.faq')}
             </button>
             <div className="pt-4 border-t border-primary-700 space-y-3">
               <button

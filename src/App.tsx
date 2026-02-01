@@ -12,6 +12,7 @@ import { ProductOverview } from './components/sections/ProductOverview';
 import { ParentDashboard } from './components/sections/ParentDashboard';
 import { Traction } from './components/sections/Traction';
 import { Pricing } from './components/sections/Pricing';
+import { FAQ } from './components/sections/FAQ';
 import { FinalCTA } from './components/sections/FinalCTA';
 import { Footer } from './components/Footer';
 import { useLanguage } from './context/LanguageContext';
@@ -56,6 +57,7 @@ const AppContent = () => {
       <ParentDashboard />
       <Traction />
       <Pricing />
+      <FAQ />
       <FinalCTA />
       <Footer />
 

@@ -39,14 +39,14 @@ export const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 lg:py-32 bg-gray-50 dark:bg-primary-950">
+    <section id="faq" className="py-12 lg:py-20 bg-gray-50 dark:bg-primary-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-primary-800 mb-4">
             {t('faq.title')}
